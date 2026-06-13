@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Positive Narrative</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    min-height:100vh;
+    overflow:hidden;
+    background:#020408;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    font-family:Arial, sans-serif;
+}
+
+.stage{
+    position:relative;
+    height:100vh;
+}
+
+.stage img{
+    height:100vh;
+    display:block;
+}
+
+.hotspot{
+    position:absolute;
+    width:7.2%;
+    aspect-ratio:1/1;
+    border-radius:50%;
+    cursor:pointer;
+    transform:translate(-50%,-50%);
+    background:transparent;
+    transition:0.25s ease;
+}
+
+/* poziții centrate pe lentile */
+.red{
+    left:50%;
+    top:31%;
+}
+
+.yellow{
+    left:50%;
+    top:52%;
+}
+
+.green{
+    left:50%;
+    top:74.7%;
+}
+
+/* efecte controlate, fără să depășească mult lentila */
+.red:hover{
+    background:radial-gradient(circle, rgba(255,80,80,0.75), rgba(255,0,0,0.15) 55%, transparent 70%);
+    box-shadow:0 0 35px rgba(255,0,0,0.55);
+}
+
+.yellow:hover{
+    background:radial-gradient(circle, rgba(255,230,80,0.8), rgba(255,200,0,0.18) 55%, transparent 70%);
+    box-shadow:0 0 35px rgba(255,210,0,0.55);
+}
+
+.green:hover{
+    background:radial-gradient(circle, rgba(80,255,140,0.8), rgba(0,255,120,0.18) 55%, transparent 70%);
+    box-shadow:0 0 35px rgba(0,255,120,0.55);
+}
+
+#result{
+    position:fixed;
+    bottom:30px;
+    left:50%;
+    transform:translateX(-50%);
+    min-width:350px;
+    padding:18px 25px;
+    background:rgba(0,0,0,0.8);
+    border:1px solid rgba(255,255,255,0.2);
+    border-radius:12px;
+    backdrop-filter:blur(10px);
+    color:white;
+    text-align:center;
+    display:none;
+    z-index:100;
+}
+</style>
+</head>
+
+<body>
+
+<div class="stage">
+    <img src="traffic-bg.png" alt="Positive Narrative traffic light">
+
+    <div class="hotspot red" onclick="chooseMood('red')"></div>
+    <div class="hotspot yellow" onclick="chooseMood('yellow')"></div>
+    <div class="hotspot green" onclick="chooseMood('green')"></div>
+</div>
+
+<div id="result"></div>
+
+<script>
+function chooseMood(mood){
+    const result = document.getElementById("result");
+    result.style.display = "block";
+
+    if(mood === "red"){
+        result.innerHTML = "🔴 Red selected — Let's slow down, breathe, and focus on what feels urgent.";
+    }
+
+    if(mood === "yellow"){
+        result.innerHTML = "🟡 Yellow selected — Let's explore what feels unclear and understand it.";
+    }
+
+    if(mood === "green"){
+        result.innerHTML = "🟢 Green selected — Let's build on your balance and keep moving forward.";
+    }
+}
+</script>
+
+</body>
+</html>
