@@ -1,279 +1,240 @@
-```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
-
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
 <title>Positive Narrative</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600&family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600&family=Montserrat:wght@300;400;500;600;900&display=swap" rel="stylesheet">
 
 <style>
-
 *{
-margin:0;
-padding:0;
-box-sizing:border-box;
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
 }
 
 html{
-scroll-behavior:smooth;
+    scroll-behavior:smooth;
 }
 
 body{
-background:#020408;
-color:white;
-font-family:'Montserrat',sans-serif;
+    background:#020408;
+    color:white;
+    font-family:'Montserrat', Arial, sans-serif;
 }
 
 /* HERO */
 
 .hero{
-height:100vh;
+    height:100vh;
+    background-image:url("hero-bg.png");
+    background-size:cover;
+    background-position:center center;
+    background-repeat:no-repeat;
+    position:relative;
 
-background-image:url("hero-bg.png");
-background-size:cover;
-background-position:center;
-background-repeat:no-repeat;
+    display:flex;
+    justify-content:center;
+    align-items:flex-end;
 
-position:relative;
-
-display:flex;
-justify-content:center;
-align-items:flex-end;
-
-padding-bottom:55px;
+    padding-bottom:55px;
 }
 
 /* TITLE */
 
 .hero-title{
-
-position:absolute;
-
-top:25px;
-left:50%;
-
-transform:translateX(-50%);
-
-width:95%;
-
-text-align:center;
-
-z-index:10;
+    position:absolute;
+    top:24px;
+    left:50%;
+    transform:translateX(-50%);
+    width:94%;
+    text-align:center;
+    z-index:5;
 }
 
 .hero-title h1{
+    font-family:'Cinzel', serif;
+    font-size:42px;
+    font-weight:500;
+    letter-spacing:6px;
+    white-space:nowrap;
 
-font-family:'Cinzel',serif;
-
-font-size:44px;
-font-weight:500;
-
-letter-spacing:6px;
-
-color:white;
-
-text-shadow:
-0 2px 10px rgba(0,0,0,0.8),
-0 0 20px rgba(255,255,255,0.15);
+    color:white;
+    text-shadow:
+        0 2px 10px rgba(0,0,0,0.9),
+        0 0 18px rgba(255,255,255,0.22);
 }
 
 .hero-title p{
-
-margin-top:10px;
-
-font-family:'Montserrat',sans-serif;
-
-font-size:18px;
-font-weight:300;
-
-letter-spacing:4px;
-
-color:rgba(255,255,255,0.9);
-
-text-shadow:
-0 2px 8px rgba(0,0,0,0.8);
+    margin-top:9px;
+    font-family:'Montserrat', Arial, sans-serif;
+    font-size:16px;
+    font-weight:300;
+    letter-spacing:3px;
+    color:rgba(255,255,255,0.9);
+    text-shadow:0 2px 8px rgba(0,0,0,0.9);
 }
 
 /* BUTTON */
 
 .start-btn{
+    padding:14px 34px;
+    border:1px solid rgba(255,255,255,0.8);
+    border-radius:40px;
 
-padding:14px 34px;
+    color:white;
+    text-decoration:none;
+    letter-spacing:2px;
+    font-weight:600;
 
-border:1px solid rgba(255,255,255,0.8);
-border-radius:40px;
+    background:rgba(0,0,0,0.42);
+    backdrop-filter:blur(8px);
 
-color:white;
-text-decoration:none;
-
-letter-spacing:2px;
-font-weight:600;
-
-background:rgba(0,0,0,0.35);
-
-backdrop-filter:blur(8px);
-
-transition:.3s ease;
+    transition:.3s ease;
+    z-index:6;
 }
 
 .start-btn:hover{
-background:white;
-color:black;
+    background:white;
+    color:black;
 }
 
 /* SPACER */
 
 .spacer{
-height:25vh;
-background:linear-gradient(
-#020408,
-#071018,
-#020408
-);
+    height:25vh;
+    background:linear-gradient(#020408,#071018,#020408);
 }
 
 /* TRAFFIC MENU */
 
 .traffic-section{
+    height:100vh;
+    background-image:url("traffic-menu.png");
+    background-size:cover;
+    background-position:center center;
+    background-repeat:no-repeat;
 
-height:100vh;
-
-background-image:url("traffic-menu.png");
-
-background-size:cover;
-background-position:center;
-background-repeat:no-repeat;
-
-position:relative;
-overflow:hidden;
+    position:relative;
+    overflow:hidden;
 }
 
-/* HOTSPOTS */
+/* CLICK ZONES */
 
 .zone{
+    position:absolute;
+    left:50%;
+    transform:translate(-50%,-50%);
 
-position:absolute;
+    width:150px;
+    height:150px;
+    border-radius:50%;
 
-left:50%;
-transform:translate(-50%,-50%);
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
 
-width:150px;
-height:150px;
+    color:white;
+    text-decoration:none;
 
-border-radius:50%;
+    font-family:'Montserrat', Arial, sans-serif;
+    font-weight:900;
+    font-size:20px;
+    line-height:1.1;
+    letter-spacing:1px;
+    text-transform:uppercase;
 
-display:flex;
-justify-content:center;
-align-items:center;
+    text-shadow:
+        0 3px 8px black,
+        0 0 16px rgba(255,255,255,0.8);
 
-text-align:center;
-
-color:white;
-text-decoration:none;
-
-font-family:'Montserrat',sans-serif;
-font-weight:900;
-
-font-size:20px;
-
-letter-spacing:1px;
-line-height:1.1;
-
-text-transform:uppercase;
-
-text-shadow:
-0 3px 8px black,
-0 0 16px rgba(255,255,255,0.8);
-
-transition:.3s ease;
+    transition:.3s ease;
 }
 
-/* SEMAFOR */
-
 .stop-zone{
-top:31%;
+    top:31%;
 }
 
 .pause-zone{
-top:54%;
+    top:54%;
 }
 
 .go-zone{
-top:78%;
+    top:78%;
 }
 
-/* HOVER */
-
 .zone:hover{
-transform:translate(-50%,-50%) scale(1.08);
+    transform:translate(-50%,-50%) scale(1.08);
 }
 
 .stop-zone:hover{
-box-shadow:
-0 0 50px rgba(255,0,0,.9),
-0 0 120px rgba(255,0,0,.6);
+    box-shadow:
+        0 0 50px rgba(255,0,0,.9),
+        0 0 120px rgba(255,0,0,.6);
 }
 
 .pause-zone:hover{
-box-shadow:
-0 0 50px rgba(255,180,0,.9),
-0 0 120px rgba(255,180,0,.6);
+    box-shadow:
+        0 0 50px rgba(255,180,0,.9),
+        0 0 120px rgba(255,180,0,.6);
 }
 
 .go-zone:hover{
-box-shadow:
-0 0 50px rgba(0,255,120,.9),
-0 0 120px rgba(0,255,120,.6);
+    box-shadow:
+        0 0 50px rgba(0,255,120,.9),
+        0 0 120px rgba(0,255,120,.6);
 }
 
 /* MOBILE */
 
 @media(max-width:768px){
 
-.hero-title{
-top:18px;
+    .hero{
+        background-position:center center;
+    }
+
+    .hero-title{
+        top:18px;
+        width:96%;
+    }
+
+    .hero-title h1{
+        font-size:18px;
+        letter-spacing:3px;
+        white-space:nowrap;
+    }
+
+    .hero-title p{
+        margin-top:7px;
+        font-size:11px;
+        letter-spacing:2px;
+    }
+
+    .start-btn{
+        padding:13px 28px;
+        font-size:14px;
+    }
+
+    .zone{
+        width:115px;
+        height:115px;
+        font-size:15px;
+    }
+
+    .stop-zone{
+        top:33.5%;
+    }
+
+    .pause-zone{
+        top:54.2%;
+    }
+
+    .go-zone{
+        top:77.8%;
+    }
 }
-
-.hero-title h1{
-
-font-size:18px;
-
-letter-spacing:3px;
-
-white-space:nowrap;
-}
-
-.hero-title p{
-
-font-size:11px;
-
-letter-spacing:2px;
-}
-
-.zone{
-width:115px;
-height:115px;
-font-size:15px;
-}
-
-.stop-zone{
-top:33.5%;
-}
-
-.pause-zone{
-top:54.2%;
-}
-
-.go-zone{
-top:77.8%;
-}
-
-}
-
 </style>
 </head>
 
@@ -281,17 +242,12 @@ top:77.8%;
 
 <section class="hero">
 
-<div class="hero-title">
+    <div class="hero-title">
+        <h1>POSITIVE NARRATIVE</h1>
+        <p>Understand. Process. Grow.</p>
+    </div>
 
-<h1>POSITIVE NARRATIVE</h1>
-
-<p>Understand. Process. Grow.</p>
-
-</div>
-
-<a href="#traffic" class="start-btn">
-SCROLL TO BEGIN
-</a>
+    <a href="#traffic" class="start-btn">SCROLL TO BEGIN</a>
 
 </section>
 
@@ -299,20 +255,13 @@ SCROLL TO BEGIN
 
 <section class="traffic-section" id="traffic">
 
-<a href="stop.html" class="zone stop-zone">
-Stop<br>Thinking
-</a>
+    <a href="stop.html" class="zone stop-zone">Stop<br>Thinking</a>
 
-<a href="pause.html" class="zone pause-zone">
-Pause<br>Thinking
-</a>
+    <a href="pause.html" class="zone pause-zone">Pause<br>Thinking</a>
 
-<a href="go.html" class="zone go-zone">
-Let's<br>Go
-</a>
+    <a href="go.html" class="zone go-zone">Let's<br>Go</a>
 
 </section>
 
 </body>
 </html>
-```
