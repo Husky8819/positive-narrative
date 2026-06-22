@@ -59,7 +59,6 @@ body{
     font-weight:500;
     letter-spacing:6px;
     white-space:nowrap;
-
     color:white;
     text-shadow:
         0 2px 10px rgba(0,0,0,0.9),
@@ -68,7 +67,6 @@ body{
 
 .hero-title p{
     margin-top:9px;
-    font-family:'Montserrat', Arial, sans-serif;
     font-size:16px;
     font-weight:300;
     letter-spacing:3px;
@@ -82,15 +80,12 @@ body{
     padding:14px 34px;
     border:1px solid rgba(255,255,255,0.8);
     border-radius:40px;
-
     color:white;
     text-decoration:none;
     letter-spacing:2px;
     font-weight:600;
-
     background:rgba(0,0,0,0.42);
     backdrop-filter:blur(8px);
-
     transition:.3s ease;
     z-index:6;
 }
@@ -98,13 +93,6 @@ body{
 .start-btn:hover{
     background:white;
     color:black;
-}
-
-/* SPACER */
-
-.spacer{
-    height:25vh;
-    background:linear-gradient(#020408,#071018,#020408);
 }
 
 /* TRAFFIC MENU */
@@ -115,9 +103,10 @@ body{
     background-size:cover;
     background-position:center center;
     background-repeat:no-repeat;
-
     position:relative;
     overflow:hidden;
+
+    margin-top:-1px;
 }
 
 /* CLICK ZONES */
@@ -126,44 +115,29 @@ body{
     position:absolute;
     left:50%;
     transform:translate(-50%,-50%);
-
     width:150px;
     height:150px;
     border-radius:50%;
-
     display:flex;
     justify-content:center;
     align-items:center;
     text-align:center;
-
     color:white;
     text-decoration:none;
-
-    font-family:'Montserrat', Arial, sans-serif;
     font-weight:900;
     font-size:20px;
     line-height:1.1;
     letter-spacing:1px;
     text-transform:uppercase;
-
     text-shadow:
         0 3px 8px black,
         0 0 16px rgba(255,255,255,0.8);
-
     transition:.3s ease;
 }
 
-.stop-zone{
-    top:31%;
-}
-
-.pause-zone{
-    top:54%;
-}
-
-.go-zone{
-    top:78%;
-}
+.stop-zone{ top:30%; }
+.pause-zone{ top:54%; }
+.go-zone{ top:77%; }
 
 .zone:hover{
     transform:translate(-50%,-50%) scale(1.08);
@@ -192,6 +166,7 @@ body{
 @media(max-width:768px){
 
     .hero{
+        background-size:cover;
         background-position:center center;
     }
 
@@ -203,7 +178,6 @@ body{
     .hero-title h1{
         font-size:18px;
         letter-spacing:3px;
-        white-space:nowrap;
     }
 
     .hero-title p{
@@ -223,17 +197,9 @@ body{
         font-size:15px;
     }
 
-    .stop-zone{
-        top:33.5%;
-    }
-
-    .pause-zone{
-        top:54.2%;
-    }
-
-    .go-zone{
-        top:77.8%;
-    }
+    .stop-zone{ top:33.5%; }
+    .pause-zone{ top:54.2%; }
+    .go-zone{ top:77.8%; }
 }
 </style>
 </head>
@@ -241,26 +207,18 @@ body{
 <body>
 
 <section class="hero">
-
     <div class="hero-title">
         <h1>POSITIVE NARRATIVE</h1>
         <p>Understand. Process. Grow.</p>
     </div>
 
     <a href="#traffic" class="start-btn">SCROLL TO BEGIN</a>
-
 </section>
 
-<div class="spacer"></div>
-
 <section class="traffic-section" id="traffic">
-
     <a href="stop.html" class="zone stop-zone">Stop<br>Thinking</a>
-
     <a href="pause.html" class="zone pause-zone">Pause<br>Thinking</a>
-
     <a href="go.html" class="zone go-zone">Let's<br>Go</a>
-
 </section>
 
 </body>
