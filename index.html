@@ -12,118 +12,209 @@
     box-sizing:border-box;
 }
 
+html{
+    scroll-behavior:smooth;
+}
+
 body{
-    min-height:100vh;
-    overflow:hidden;
     background:#020408;
-    display:flex;
-    justify-content:center;
-    align-items:center;
+    color:white;
     font-family:Arial, sans-serif;
 }
 
-.stage{
+/* HERO */
+
+.hero{
+    height:100vh;
+    background-image:url("hero-bg.png");
+    background-size:cover;
+    background-position:center center;
+    background-repeat:no-repeat;
+
+    display:flex;
+    justify-content:center;
+    align-items:flex-end;
+
+    padding-bottom:55px;
+}
+
+.start-btn{
+    padding:14px 34px;
+    border:1px solid rgba(255,255,255,0.75);
+    border-radius:40px;
+
+    color:white;
+    text-decoration:none;
+    letter-spacing:2px;
+    font-weight:bold;
+
+    background:rgba(0,0,0,0.45);
+    backdrop-filter:blur(8px);
+
+    transition:0.3s ease;
+}
+
+.start-btn:hover{
+    background:white;
+    color:black;
+}
+
+/* CLEAN SEPARATION */
+
+.spacer{
+    height:25vh;
+    background:linear-gradient(#020408, #071018, #020408);
+}
+
+/* TRAFFIC MENU */
+
+.traffic-section{
+    height:100vh;
+    background-image:url("traffic-menu.png");
+    background-size:cover;
+    background-position:center center;
+    background-repeat:no-repeat;
+
     position:relative;
-    height:100vh;
+    overflow:hidden;
 }
 
-.stage img{
-    height:100vh;
-    display:block;
-}
+/* CLICK ZONES */
 
-.hotspot{
+.zone{
     position:absolute;
-    width:7.2%;
-    aspect-ratio:1/1;
+
+    left:50%;
+    transform:translate(-50%, -50%);
+
+    width:150px;
+    height:150px;
     border-radius:50%;
-    cursor:pointer;
-    transform:translate(-50%,-50%);
-    background:transparent;
-    transition:0.25s ease;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+
+    color:white;
+    text-decoration:none;
+
+    font-weight:900;
+    font-size:20px;
+    line-height:1.05;
+    letter-spacing:1.4px;
+    text-transform:uppercase;
+
+    text-shadow:
+        0 3px 8px black,
+        0 0 16px rgba(255,255,255,0.75);
+
+    transition:0.3s ease;
 }
 
-/* poziții centrate pe lentile */
-.red{
-    left:50%;
+/* coordinates for traffic-menu.png */
+.stop-zone{
     top:31%;
 }
 
-.yellow{
-    left:50%;
-    top:52%;
+.pause-zone{
+    top:54%;
 }
 
-.green{
-    left:50%;
-    top:74.7%;
+.go-zone{
+    top:78%;
 }
 
-/* efecte controlate, fără să depășească mult lentila */
-.red:hover{
-    background:radial-gradient(circle, rgba(255,80,80,0.75), rgba(255,0,0,0.15) 55%, transparent 70%);
-    box-shadow:0 0 35px rgba(255,0,0,0.55);
+/* HOVER EFFECTS */
+
+.zone span{
+    transition:0.3s ease;
 }
 
-.yellow:hover{
-    background:radial-gradient(circle, rgba(255,230,80,0.8), rgba(255,200,0,0.18) 55%, transparent 70%);
-    box-shadow:0 0 35px rgba(255,210,0,0.55);
+.zone:hover{
+    transform:translate(-50%, -50%) scale(1.08);
 }
 
-.green:hover{
-    background:radial-gradient(circle, rgba(80,255,140,0.8), rgba(0,255,120,0.18) 55%, transparent 70%);
-    box-shadow:0 0 35px rgba(0,255,120,0.55);
+.zone:hover span{
+    transform:scale(1.08);
 }
 
-#result{
-    position:fixed;
-    bottom:30px;
-    left:50%;
-    transform:translateX(-50%);
-    min-width:350px;
-    padding:18px 25px;
-    background:rgba(0,0,0,0.8);
-    border:1px solid rgba(255,255,255,0.2);
-    border-radius:12px;
-    backdrop-filter:blur(10px);
-    color:white;
-    text-align:center;
-    display:none;
-    z-index:100;
+.stop-zone:hover{
+    box-shadow:
+        0 0 55px rgba(255,0,0,0.95),
+        0 0 130px rgba(255,0,0,0.65),
+        inset 0 0 55px rgba(255,0,0,0.35);
+}
+
+.pause-zone:hover{
+    box-shadow:
+        0 0 55px rgba(255,170,0,0.95),
+        0 0 130px rgba(255,170,0,0.65),
+        inset 0 0 55px rgba(255,170,0,0.35);
+}
+
+.go-zone:hover{
+    box-shadow:
+        0 0 55px rgba(0,255,120,0.95),
+        0 0 130px rgba(0,255,120,0.65),
+        inset 0 0 55px rgba(0,255,120,0.35);
+}
+
+/* MOBILE */
+
+@media(max-width:768px){
+    .hero{
+        background-position:center center;
+    }
+
+    .traffic-section{
+        background-position:center center;
+    }
+
+    .zone{
+    width:115px;
+    height:115px;
+    font-size:15px;
+}
+
+.stop-zone{
+    top:33.5%;
+}
+
+.pause-zone{
+    top:54.2%;
+}
+
+.go-zone{
+    top:77.8%;
+}
 }
 </style>
 </head>
 
 <body>
 
-<div class="stage">
-    <img src="traffic-bg.png" alt="Positive Narrative traffic light">
+<section class="hero">
+    <a href="#traffic" class="start-btn">SCROLL TO BEGIN</a>
+</section>
 
-    <div class="hotspot red" onclick="chooseMood('red')"></div>
-    <div class="hotspot yellow" onclick="chooseMood('yellow')"></div>
-    <div class="hotspot green" onclick="chooseMood('green')"></div>
-</div>
+<div class="spacer"></div>
 
-<div id="result"></div>
+<section class="traffic-section" id="traffic">
 
-<script>
-function chooseMood(mood){
-    const result = document.getElementById("result");
-    result.style.display = "block";
+    <a href="stop.html" class="zone stop-zone">
+        <span>Stop<br>Thinking</span>
+    </a>
 
-    if(mood === "red"){
-        result.innerHTML = "🔴 Red selected — Let's slow down, breathe, and focus on what feels urgent.";
-    }
+    <a href="pause.html" class="zone pause-zone">
+        <span>Pause<br>Thinking</span>
+    </a>
 
-    if(mood === "yellow"){
-        result.innerHTML = "🟡 Yellow selected — Let's explore what feels unclear and understand it.";
-    }
+    <a href="go.html" class="zone go-zone">
+        <span>Let's<br>Go</span>
+    </a>
 
-    if(mood === "green"){
-        result.innerHTML = "🟢 Green selected — Let's build on your balance and keep moving forward.";
-    }
-}
-</script>
+</section>
 
 </body>
 </html>
